@@ -30,6 +30,7 @@ console.log(typeof(a));
  var name = "ashish";
  name="as";
  console.log(name);
+ console.log("git");
 
 //  Javascript ternary operator
 // condition ? exp1 : exp2
