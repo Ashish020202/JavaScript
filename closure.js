@@ -18,15 +18,58 @@ x();
 function z(){
     var b =7;
     function y(){
-        console.log(b);
+        // console.log(b);
     }
     return y;
 }
 // assigning a var for function z
 var x = z();
-console.log(x);
+// console.log(x);
 // calling x
 x();
+
+
+
+// setTimeout + closure
+
+// this closure 1st print ashish it doesnt wait for 3sec .
+function S(){
+    // func as a parameter
+    // this func forms a closure and takes reference of ash
+   setTimeout(function () {
+    // console.log("ash");
+   },3000);
+//    console.log("ashish");
+}
+S();
+
+function T(){
+    // var doesnt create new copy so it give output as 7 always
+    // let creates its own new copy every time so it gives 0 to 6;
+    for (let i=0;i<7;i++){
+        setTimeout(function(){
+            // console.log(i);
+        },i*1000);
+    }
+}
+T();
+
+// fixing problem using var 
+
+function V(){
+//    created new copy of x everytime it is called
+        for (let i=0;i<7;i++){
+            function close(x){
+                setTimeout(function(){
+                    console.log(x);
+                },i*1000);
+            }
+            close(i)
+        }
+    
+}
+V()
+
 
 
 
